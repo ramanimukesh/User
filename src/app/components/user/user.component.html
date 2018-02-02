@@ -1,0 +1,40 @@
+<div>
+  <h1>User</h1>
+  <form>
+    <div>
+      <label for="name">Name: </label><br>
+      <input type="text" [(ngModel)]="user.name" name="name">
+    </div>
+    <div>
+      <label for="age">Age: </label><br>
+      <input type="number" [(ngModel)]="user.age" name="age">
+    </div>
+    <div>
+      <label for="email">Salary: </label><br>
+      <input type="text" [(ngModel)]="user.salary" name="salary">
+    </div>
+    <input type="button" 
+     (click)="saveUser()" name="Save User" value="Save User"/>
+  </form>
+</div>
+
+<div>
+  <h1>List of users</h1>
+  <form>
+    <table> 
+          <tr>
+            <td><label for="id">Id: </label></td>
+            <td><label for="name">Name: </label></td>
+            <td><label for="age">Age: </label></td>
+            <td><label for="email">Salary: </label></td>
+          </tr>
+          
+          <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.salary}}</td>
+          </tr>
+    </table>
+  </form>
+</div>
